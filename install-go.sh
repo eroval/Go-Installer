@@ -27,7 +27,7 @@ GO_directory="/usr/tmp-downloads/"
 GO_archive="$GOversion.tar.gz"
 GO_extract="go19-extracted"
 GO_install_version="go-$GO_version"
-GO_install_dir="/usr/bin/go"
+GO_install_dir="$HOME/go"
 
 sudo mkdir $GO_directory
 
@@ -67,5 +67,6 @@ done
 sudo echo "export GOROOT=$GO_install_dir/$GO_install_version" >> ~/.bashrc
 sudo echo "export GOPATH=$GO_install_dir" >> ~/.bashrc
 sudo echo "export PATH=\$PATH:$GO_install_dir/$GO_install_version/bin" >> ~/.profile
+sudo chmod 777 $GO_install_dir
 source ~/.bashrc
 source ~/.profile
